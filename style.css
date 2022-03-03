@@ -1,0 +1,416 @@
+/* || RESETS */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: "Open Sans", "Lato", "Arial", sans-serif;
+	font-size: 15px;
+	text-align: center;
+	line-height: 1.5;
+	scroll-behavior: smooth;
+
+	--primary-pink: hsl(322, 100%, 66%);
+	--light-cyan: hsl(193, 100%, 96%);
+	--dark-cyan: hsl(192, 100%, 9%);
+	--light-text: hsl(193, 21%, 30%);
+	--grey-blue: hsl(208, 11%, 55%);
+
+	color: var(--dark-cyan);
+
+	--basic-padding: clamp(1.5rem, 8vw, 5rem);
+}
+
+@media (min-width: 720px) {
+	html {
+		font-size: 18px;
+	}
+}
+
+@media (min-width: 775px) {
+	html {
+		text-align: left;
+	}
+}
+
+/* Typeface in input fields */
+input,
+select,
+textarea,
+button {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+	padding-inline-start: 0;
+}
+
+address {
+	font-style: normal;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+/* || GLOBAL STYLINGS */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	font-weight: 600;
+}
+
+h2 {
+	font-size: 1.6em;
+	letter-spacing: -0.03rem;
+	line-height: 1.3;
+}
+
+h3 {
+	font-size: 1.3em;
+}
+
+@media (min-width: 720px) {
+	h2 {
+		font-size: 2em;
+	}
+
+	h3 {
+		font-size: 1.5em;
+	}
+}
+
+::selection {
+	color: white;
+	background-color: var(--primary-pink);
+}
+
+button {
+	padding: 0.75rem 3.5rem;
+	border-radius: 100px;
+	border: none;
+
+	font-size: 0.875rem;
+	font-weight: 700;
+	background-color: var(--primary-pink);
+	color: white;
+	box-shadow: 0 4px 24px 0 hsla(0, 0%, 0%, 0.15);
+}
+
+/* || HIGH LEVEL SECTION STYLINGS */
+
+/* Basic padding */
+#header,
+#footer,
+#main > * {
+	padding: 2rem var(--basic-padding);
+}
+
+#main {
+	position: relative;
+}
+
+main p {
+	color: var(--light-text);
+}
+
+#hero {
+	background-color: var(--light-cyan);
+	background-image: url(images/bg-hero-mobile.svg);
+	background-repeat: no-repeat;
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 3rem;
+	justify-items: center;
+	align-items: center;
+
+	padding-top: clamp(120px, 15vw, 160px);
+	padding-bottom: clamp(120px, 15vw, 160px);
+}
+
+@media (min-width: 720px) {
+	#hero {
+		background-image: url(images/bg-hero-desktop.svg);
+	}
+}
+
+#features {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+#footer {
+	background-color: var(--dark-cyan);
+	color: white;
+	text-align: left;
+
+	padding-top: 8rem;
+	padding-bottom: 7rem;
+
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+#header {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* gap: 40px; */
+}
+
+@media (min-width: 720px) {
+	#header {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+}
+
+/* || HEADER'S CHILDREN */
+
+#home-link {
+	display: inline-block;
+}
+
+#home-link > svg {
+	width: clamp(120px, 24vw, 200px);
+}
+
+#header > button {
+	padding: 0.5rem 2rem;
+
+	font-size: 0.875rem;
+	background-color: white;
+	color: inherit;
+}
+
+@media (min-width: 720px) {
+	#header > button {
+		padding: 0.75rem 3rem;
+	}
+}
+
+/* || HERO'S CHILDREN */
+
+#hero > header {
+	max-width: 60ch;
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	align-items: center;
+}
+
+@media (min-width: 1400px) {
+	#hero > img {
+		/* for really wide screens */
+		max-width: 600px;
+	}
+}
+/* || FEATURES' CHILDREN */
+
+.feature-block {
+	padding: 4rem;
+	border-radius: 8px;
+	background-color: white;
+	box-shadow: 0 4px 24px 0 hsla(0, 0%, 0%, 0.075);
+
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+	gap: 3rem;
+	justify-items: center;
+	align-items: center;
+}
+
+.feature-block > header {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+/* alternate text - image position in feature-block when layout is horizontal */
+@media (min-width: 783px) {
+	#grow-together > header,
+	#your-users > header {
+		order: -1;
+	}
+}
+
+/* || HANGING BLOCK */
+
+#hanging-block {
+	/* max-width: 648px; */
+	width: 100%;
+	max-width: 800px;
+	padding: 2rem;
+
+	border-radius: 8px;
+	background-color: white;
+	box-shadow: 0 4px 24px 0 hsla(0, 0%, 0%, 0.075);
+
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	align-items: center;
+	text-align: center;
+
+	position: relative;
+	margin: auto;
+	/* left: var(--basic-padding);
+	right: var(--basic-padding); */
+	bottom: -160px;
+}
+
+/* || FOOTER'S CHILDREN */
+
+#footer-logo {
+	width: clamp(160px, 24vw, 240px);
+}
+
+#footer-content {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+@media (min-width: 1000px) {
+	#footer-content {
+		flex-direction: row;
+	}
+
+	#footer-content > * {
+		flex-grow: 1;
+	}
+}
+
+address ul,
+#social-medias {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+#footer-links {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+	max-width: 500px;
+	row-gap: 0.75rem;
+	column-gap: 2.5rem;
+}
+
+address li {
+	display: flex;
+	gap: 1rem;
+}
+
+address .svg-container {
+	width: 24px;
+	height: 24px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#footer-links {
+	font-size: 17px;
+}
+
+#social-medias {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#social-medias a {
+	outline: 1px solid white;
+	border-radius: 100px;
+	padding: 10px;
+
+	display: inline-block;
+	line-height: 0;
+}
+
+@media (min-width: 1000px) {
+	#social-medias {
+		justify-content: left;
+	}
+}
+
+#footnote {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+@media (min-width: 1000px) {
+	#footnote {
+		flex-direction: row;
+		gap: 1rem;
+		justify-content: space-between;
+	}
+
+	#copyright {
+		order: 1;
+	}
+}
+
+#copyright {
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	text-align: center;
+	font-size: 13px;
+}
+
+#attribution {
+	font-size: 13px;
+	text-align: center;
+	color: hsla(100, 100%, 100%, 0.5);
+}
+
+#attribution a {
+	font-weight: 700;
+	color: white;
+}
