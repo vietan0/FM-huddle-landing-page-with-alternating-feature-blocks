@@ -311,8 +311,17 @@ main p {
 
 /* || FOOTER'S CHILDREN */
 
+#footer a {
+	background: linear-gradient(var(--primary-pink), var(--primary-pink));
+	background-size: 0% 1px;
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	transition: 200ms ease-in-out;
+}
+
 #footer a:hover {
 	color: var(--primary-pink);
+	background-size: 100% 2px;
 }
 
 #footer-logo {

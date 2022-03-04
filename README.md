@@ -5,16 +5,13 @@ This is a solution to the [Huddle landing page with alternating feature blocks c
 ## Table of contents
 
 -   [Overview](#overview)
-	-   [The challenge](#the-challenge)
-	-   [Screenshot](#screenshot)
-	-   [Links](#links)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
 -   [My process](#my-process)
-	-   [Built with](#built-with)
-	-   [What I learned](#what-i-learned)
-	-   [Continued development](#continued-development)
-	-   [Useful resources](#useful-resources)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
 -   [Author](#author)
--   [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -39,15 +36,15 @@ Users should be able to:
 ### Structure
 
 -   Header
-	-   Logo
-	-   Button
+    -   Logo
+    -   Button
 -   Main
-	-   3 sections
-	-   Hanging block
+    -   3 sections
+    -   Hanging block
 -   Footer
-	-   Logo
-	-   Footer links
-	-   Attribution & Copyright
+    -   Logo
+    -   Footer links
+    -   Attribution & Copyright
 
 ### Built with
 
@@ -60,12 +57,13 @@ Users should be able to:
 ### What I learned
 
 -   Two ways to scale `<svg>` element:
-	- [(Prefered) Control `<svg>` like an `<img>`](https://stackoverflow.com/a/66051530/17673377)
-	- [Using viewBox](https://www.youtube.com/watch?v=TBYJ2V1jAlA)
 
--	Specify `align-items` to make sure flex items don't stretch ([freeCodeCamp](https://www.freecodecamp.org/learn/responsive-web-design/css-flexbox/align-elements-using-the-align-items-property)): 
-![](./align-items.jpg)
-![](./align-items-normal.jpg)
+    -   [(Prefered) Control `<svg>` like an `<img>`](https://stackoverflow.com/a/66051530/17673377)
+    -   [Using viewBox](https://www.youtube.com/watch?v=TBYJ2V1jAlA)
+
+-   Specify `align-items` to make sure flex items don't stretch ([freeCodeCamp](https://www.freecodecamp.org/learn/responsive-web-design/css-flexbox/align-elements-using-the-align-items-property)):
+    ![](./align-items.jpg)
+    ![](./align-items-normal.jpg)
 
 ```css
 .flex-container {
@@ -73,21 +71,33 @@ Users should be able to:
 }
 ```
 
-### Continued development
+-   Specify media queries **right after** each element - much easier to find afterwards
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+```css
+section #hero {
+	flex-direction: column;
+}
 
-### Useful resources
+@media (min-width: 800px) {
+	section #hero {
+		flex-direction: row;
+	}
+}
 
--   [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
--   [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+/* seperate element - seperate @media */
+
+.thumbnail {
+	object-fit: cover;
+}
+
+@media (min-width: 800px) {
+	.thumbnail {
+		object-fit: contain;
+	}
+}
+```
 
 ## Author
 
--   Website - [Add your name here](https://www.your-site.com)
--   Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
--   Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+-   Frontend Mentor - [@vietan0](https://www.frontendmentor.io/profile/vietan0)
+-   Linkedin - [@vietan](https://www.linkedin.com/in/vietan/)
